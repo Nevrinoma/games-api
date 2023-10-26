@@ -6,6 +6,7 @@ info:
 paths:
   /games:
     get:
+      requestBody: {}
       tags:
         - games
       responses:
@@ -80,6 +81,28 @@ paths:
       operationId: id
       summary: Get full details of a game
       description: Returns full details of a given id game
+    delete:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/delete-game'
+      tags:
+        - delete-game
+      parameters:
+        -
+          name: id
+          schema:
+            type: string
+          in: path
+          required: true
+      responses:
+        '204':
+          description: 204 no content
+        '404':
+          description: 404 not found
+      summary: Delete game
+      description: Delete game by id
     parameters:
       -
         name: id
@@ -114,3 +137,14 @@ components:
       example:
         name: Tetris
         price: 0.99
+    delete-game:
+      description: ''
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          description: ''
+          type: string
+      example:
+        id: 1
