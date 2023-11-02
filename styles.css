@@ -1,0 +1,117 @@
+/* Основные стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Стили для таблицы */
+#app {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #dddddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Стили для модального окна */
+.moodal .modal-dialog {
+    margin: 10vh auto;
+}
+
+.moodal .modal-content {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.moodal .modal-header,
+.moodal .modal-footer {
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+}
+
+.moodal .modal-body {
+    padding: 20px;
+}
+
+.moodal .btn-close {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 21px;
+    opacity: 0.7;
+}
+
+.moodal .btn-close:hover {
+    opacity: 1;
+}
+
+.moodal .btn-secondary {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.moodal .btn-secondary:hover {
+    background-color: #d4d4d4;
+}
+
+/* Улучшаем читаемость кода */
+code {
+    background-color: #eeeeee;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Поддержка адаптивности */
+@media (max-width: 768px) {
+    header, #app {
+        padding: 10px;
+    }
+
+    .moodal .modal-dialog {
+        width: 90%;
+    }
+}

@@ -2,7 +2,8 @@ const vue = Vue.createApp({
     data() {
         return {
             gameInModal: {name:null},
-            games: []
+            games: [],
+            isSortedAscending: true  
         }
     },
     async created(){
@@ -13,6 +14,16 @@ const vue = Vue.createApp({
             this.gameInModal = await (await fetch(`http://localhost:8080/games/${id}`)).json()
             let gameInfoModal = new bootstrap.Modal(document.getElementById('gameInfoModal'), {})
             gameInfoModal.show()
+        },
+        sortGamesByPrice: function() {
+            if (this.isSortedAscending) {
+                
+                this.games.sort((a, b) => b.price - a.price);
+            } else {
+                
+                this.games.sort((a, b) => a.price - b.price);
+            }
+            this.isSortedAscending = !this.isSortedAscending; 
         }
     }
 }).mount('#app')
